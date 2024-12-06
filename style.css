@@ -85,6 +85,7 @@ input {
 input:focus-visible {
     background-color: #fff;
     outline: 4px solid #ffca6c;
+    box-shadow: inset 0px -1px 0px #0000;
 }
 
 .boost {
