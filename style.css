@@ -140,3 +140,23 @@ input:focus-visible {
 .attack .stat-label {
     max-width: 130px;
 }
+
+.background {
+    background-image: url(./images/background.jpg);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.2;
+    background-color: #19171c;
+    background-repeat: no-repeat;
+    filter: blur(0px);
+    background-position: bottom;
+}
+
+
+.total-boost {
+    margin-top: 1em;
+}
