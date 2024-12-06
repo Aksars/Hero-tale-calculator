@@ -9,6 +9,7 @@ body {
     padding-top: 3em;
     min-height: 100vh;
     /*! background-image: url(./images/background.jpg); */
+    background: linear-gradient(90deg, #19171c,#19171c,#1a171f);
 }
 
 main {
@@ -37,8 +38,9 @@ main {
     padding: 2em;
     gap: 1em;
     grid-row-gap: 1.5em;
-    background-color: #f5f5f5db;
+    background-color: #f5f5f563;
     border-radius: 7px;
+    color: white;
 }
 
 h2 {
@@ -152,10 +154,12 @@ input:focus-visible {
     left: 0;
     z-index: 1;
     /*! opacity: 0.2; */
-    background-color: #19171c;
+    /*! background-color: #19171c; */
     background-repeat: no-repeat;
     filter: blur(0px);
     background-position: bottom;
+    /*! background: background: -webkit-linear-gradient(90deg, #020202,#19171c,#19171c); */
+    /*! background: linear-gradient(90deg, #020202,#19171c,#19171c); */
 }
 
 
@@ -170,9 +174,9 @@ input:focus-visible {
 	right: 0;
 	position: absolute;
 	bottom: calc(569px - var(--loc-h));
-	--loc-h: 390px;
+	--loc-h: 569px;
 	/* backdrop-filter: blur(24px); */
-   background: linear-gradient(180deg, #19171c,#19171c00, #19171c00);
+   background: linear-gradient(180deg, #1a171e,#000000d6, #3f2861c4);
 }
 
 .power .stat-label {
