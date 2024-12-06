@@ -69,22 +69,23 @@ h2 {
 
 input {
     border: none;
-    background-color: #f9f9f9;
+    background-color: #6f6d71;
     /*! padding: 0.75em 1.2em; */
     border-radius: 119px;
     transition: 0.2s;
     outline: 1px solid #81818100;
     font-size: 20px;
-    box-shadow: inset 0px -1px 4px #00000026;
+    box-shadow: inset 0px -1px 18px #00000026;
     width: 70px;
     text-align: center;
     height: 70px;
+    color: white;
 }
 
 
 input:focus-visible {
-    background-color: #fff;
-    outline: 4px solid #ffca6c;
+    /*! background-color: #fff; */
+    outline: 4px solid #fff;
     box-shadow: inset 0px -1px 0px #0000;
 }
 
