@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Roboto;
-    padding-top: 4em;
+    padding-top: 3em;
     min-height: 100vh;
     /*! background-image: url(./images/background.jpg); */
 }
@@ -16,7 +16,7 @@ main {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto auto;
     grid-row-gap: 1em;
-    max-width: 864px;
+    max-width: 1249px;
     margin: auto;
     /*! margin-top: 3em; */
     grid-column-gap: 2em;
@@ -34,15 +34,17 @@ main {
 .stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 1em;
+    padding: 2em;
     gap: 1em;
     grid-row-gap: 1.5em;
+    background-color: #f5f5f596;
+    border-radius: 7px;
 }
 
 h2 {
     text-align: center;
     font-size: 41px;
-    color: #178217;
+    color: #fff;
     margin: 0;
 }
 
