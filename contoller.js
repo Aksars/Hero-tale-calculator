@@ -52,75 +52,9 @@ document.querySelector(".asLeft").addEventListener("mousedown", () => {
 })
 
 document.querySelectorAll(".stat-value input").forEach(element => {
-    element.addEventListener("keypress", function (event) {
-            
-        // if (event.key === '.' && element.value.includes('.')) {
-        //     event.preventDefault();  // Не допускаем повторения точек!
-        // }else if(event.key === ',' && !element.value.includes('.')){
-        //     // добавляем точку вместо запятой
-        // } else
-        // если не цифра или (точка и точка есть в строке)
-        if (!/[0-9]|\./.test(event.key)  ) {
-            event.preventDefault();  // Что за незаконный вторженец? Не цифра!
-        }
-        
-       // else if(   )   
-            //event.preventDefault(); 
-        // else if(event.key === ',')  
-        //     commaToPointOnInput(event, this)      
-    })
+    view.onlyFloatField(element)    
 });
 
-
-function comaToPoint(charStr) {
-    return charStr === "," ? "." : charStr;
-}
-
-function commaToPointOnInput(evt, field){
-    var val = field.value;
-    evt = evt || window.event;
-
-    // Ensure we only handle printable keys, excluding enter and space
-    var charCode = typeof evt.which == "number" ? evt.which : evt.keyCode;
-    if (charCode && charCode > 32) {
-        var keyChar = String.fromCharCode(charCode);
-
-        // Transform typed character
-        var mappedChar = comaToPoint(keyChar);
-
-        var start, end;
-        if (typeof field.selectionStart == "number" && typeof field.selectionEnd == "number") {
-            // Non-IE browsers and IE 9
-            start = field.selectionStart;
-            end = field.selectionEnd;
-            field.value = val.slice(0, start) + mappedChar + val.slice(end);
-
-            // Move the caret
-            field.selectionStart = field.selectionEnd = start + 1;
-        } else if (document.selection && document.selection.createRange) {
-            // For IE up to version 8
-            var selectionRange = document.selection.createRange();
-            var textInputRange = field.createTextRange();
-            var precedingRange = field.createTextRange();
-            var bookmark = selectionRange.getBookmark();
-            textInputRange.moveToBookmark(bookmark);
-            precedingRange.setEndPoint("EndToStart", textInputRange);
-            start = precedingRange.text.length;
-            end = start + selectionRange.text.length;
-
-            field.value = val.slice(0, start) + mappedChar + val.slice(end);
-            start++;
-
-            // Move the caret
-            textInputRange = field.createTextRange();
-            textInputRange.collapse(true);
-            textInputRange.move("character", start - (field.value.slice(0, start).split("\r\n").length - 1));
-            textInputRange.select();
-        }
-
-        evt.preventDefault();
-    }
-}
 
 // document.getElementById("your_input_id").onkeypress = function(event) {
    
