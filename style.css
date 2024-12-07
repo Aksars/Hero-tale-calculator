@@ -7,8 +7,7 @@ body {
     padding: 0;
     font-family: Roboto;
     padding-top: 3em;
-    min-height: 100vh;
-    /*! background-image: url(./images/background.jpg); */
+    min-height: 100vh;    
     background: linear-gradient(90deg, #1a171e, #1a171e, #1a171e);
 }
 
@@ -18,8 +17,7 @@ main {
     grid-template-rows: 1fr auto auto;
     grid-row-gap: 1em;
     max-width: 1249px;
-    margin: auto;
-    /*! margin-top: 3em; */
+    margin: auto;   
     grid-column-gap: 2em;
     justify-items: center;
 }
@@ -71,8 +69,7 @@ h2 {
 
 input {
     border: none;
-    background-color: #6f6d71;
-    /*! padding: 0.75em 1.2em; */
+    background-color: #6f6d71;    
     border-radius: 119px;
     transition: 0.2s;
     outline: 1px solid #81818100;
@@ -85,8 +82,7 @@ input {
 }
 
 
-input:focus-visible {
-    /*! background-color: #fff; */
+input:focus-visible {  
     outline: 4px solid #fff;
     box-shadow: inset 0px -1px 0px #0000;
 }
@@ -157,18 +153,14 @@ input:focus-visible {
     top: 0;
     left: 0;
     z-index: 1;
-    /*! opacity: 0.2; */
-    /*! background-color: #19171c; */
     background-repeat: no-repeat;
     filter: blur(0px);
-    background-position: bottom;
-    /*! background: background: -webkit-linear-gradient(90deg, #020202,#19171c,#19171c); */
-    /*! background: linear-gradient(90deg, #020202,#19171c,#19171c); */
+    background-position: bottom;   
 }
 
 
 .total-boost {
-    margin-top: 0.5em;
+    margin-top: 0.1em;
 }
 
 .blur-panel {
@@ -178,8 +170,7 @@ input:focus-visible {
     right: 0;
     position: absolute;
     bottom: calc(569px - var(--loc-h));
-    --loc-h: 569px;
-    /* backdrop-filter: blur(24px); */
+    --loc-h: 569px;    
     background: linear-gradient(180deg, #1a171e, #000000d6, #3f2861c4);
 }
 
@@ -195,11 +186,7 @@ input:focus-visible {
 .asLeft {
     width: var(--size);
     height: 45px;
-    border-radius: 100%;
-    /*! position: absolute; */
-    /*! top: 50%; */
-    /*! left: 0; */
-    /*! transform: translate(-50%, -50%); */
+    border-radius: 100%;   
     background-color: #fff;
     border: none;
     color: black;
@@ -227,12 +214,6 @@ input:focus-visible {
     left: 0;
     transform: translate(-40%, -50%);
 }
-/* #your_input_id{
-    z-index: 5;
-    position: relative;
-    width: 300px;
-} */
-
 
 .dash {
     width: var(--dash-w);
@@ -325,8 +306,7 @@ input:focus-visible {
     animation-delay: calc(var(--anim-del)*8);
     transition-delay: calc(var(--anim-del)*8);
 }
-.asLeft:hover ~ .asLeftAnimation .dash {
-  /* transform: translateX(109%); */
+.asLeft:hover ~ .asLeftAnimation .dash { 
   width: var(--dash-w);
   opacity: 1;
   animation-play-state: running;

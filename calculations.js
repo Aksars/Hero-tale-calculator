@@ -163,8 +163,7 @@ export function stats({ power, attack, delay, crit, critPower, powerAfter = powe
     critBoost = toPercent(critBoost)
     empower = toPercent(empower)
     speedBoost = toPercent(speedBoost)
-    // totalBoost = 1 + (totalBoost * speedBoost)
-    // totalBoost = 1 + (totalBoost * speedBoost)    
+   
     // printStats({
     //     empower: empower, speedBoost: speedBoost,
     //     critEfective: critBoost, totalBoost: totalBoost
