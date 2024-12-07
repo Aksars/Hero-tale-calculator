@@ -227,6 +227,11 @@ input:focus-visible {
     left: 0;
     transform: translate(-40%, -50%);
 }
+/* #your_input_id{
+    z-index: 5;
+    position: relative;
+    width: 300px;
+} */
 
 
 .dash {

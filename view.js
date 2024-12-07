@@ -34,5 +34,15 @@ function setStats(form, stats) {
     form.querySelector(".crit input").value = stats.crit
     form.querySelector(".critPower input").value = stats.critPower
     form.querySelector(".delay input").value = stats.delay
+}
 
+function checkSymvol(event) {
+    if (event.key === '.' && this.value.includes('.')) {
+        event.preventDefault();  // Не допускаем повторения точек!
+    } else if (!/[0-9]/.test(event.key)) {
+        event.preventDefault();  // Что за незаконный вторженец? Не цифра!
+    }
+    if (!text.match(/[a-zA-Z0-9]+/)) {
+        return { char: char, error: error }
+    }
 }

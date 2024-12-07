@@ -154,10 +154,17 @@ export function stats({ power, attack, delay, crit, critPower, powerAfter = powe
         crit: totalCritPowerAfter
     })
 
-    critBoost = (totalCritPowerAfter / critPowBefore - 1) * 100
-    empower = (afterBoostDmg / beforeBoostDmg - 1) * 100
-    speedBoost = (beforeBoostSpeed / afterBoostSpeed - 1) * 100
-    totalBoost = empower + speedBoost + critBoost
+    critBoost = (totalCritPowerAfter / critPowBefore ) 
+    empower = (afterBoostDmg / beforeBoostDmg )
+    speedBoost = (beforeBoostSpeed / afterBoostSpeed )
+
+    totalBoost = empower*speedBoost*critBoost ;
+    totalBoost = toPercent(totalBoost)
+    critBoost = toPercent(critBoost)
+    empower = toPercent(empower)
+    speedBoost = toPercent(speedBoost)
+    // totalBoost = 1 + (totalBoost * speedBoost)
+    // totalBoost = 1 + (totalBoost * speedBoost)    
     // printStats({
     //     empower: empower, speedBoost: speedBoost,
     //     critEfective: critBoost, totalBoost: totalBoost
@@ -169,5 +176,9 @@ export function stats({ power, attack, delay, crit, critPower, powerAfter = powe
     }), totalBoost:round(totalBoost, 5) }
     
 
+}
+
+function toPercent(x){
+    return (x-1)*100
 }
 
