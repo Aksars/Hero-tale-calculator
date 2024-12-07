@@ -338,3 +338,38 @@ input:focus-visible {
     animation-name: wave;
 
 }
+
+@media (max-width:1020px){
+    main {       
+        grid-template-columns: 3fr 3fr;
+        grid-template-rows: 1fr auto;
+        padding: 0em 1em;       
+    }
+    .boost {
+        grid-column: 1/3;
+        z-index: 2;
+        grid-row: 2/3;
+    }
+    .after {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    .before {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+}
+@media (max-width:720px){
+    .asLeft {
+        width: var(--size);
+        height: 70px;   
+        --size: 46px;
+    }
+    .stats {       
+        padding: 0.75em 1em;
+        gap: 0.5em;       
+    }
+    body{
+        padding-top: 2em;
+    }
+}
