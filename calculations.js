@@ -78,6 +78,44 @@ function printStats({ power, attack, dmg, speed, powerBoost, weaponBoost, empowe
    
 }
 
+function getStatsMessage({ power, attack, dmg, speed, powerBoost, weaponBoost, empower, speedBoost, totalBoost, delay: delay, critChance: critChance, critPower: critPower, crit: crit, critEfective: critEfective }){
+
+    let message = ""
+
+    if (power) {
+        if (!powerBoost) {
+            message+=`Сила ${power} \n` 
+        } else {
+            message+=`Сила +${powerBoost} ${power} \n`           
+        }
+    }
+
+    if (attack) {
+        if (!weaponBoost) {
+            message+=`Оружие ${attack} \n`         
+        } else {
+            message+=`Оружие +${weaponBoost} ${attack} \n`          
+        }
+    }
+
+    message+= critChance ? `Шанс крита ${critChance} % \n` : ""
+    message+= critPower ?`Сила крита ${critPower} % \n` : ""    
+    message+= crit ?`Итоговый множитель крита ${round(crit, 4)} % \n` : ""
+    message+= delay ?`Задержка атаки  ${delay} % \n` : "" 
+    message+= dmg ?`Сила удара  ${round(dmg, 4)} % \n` : ""
+    message+= speed ? `Скорость атаки  ${round(speed, 4)} % \n` : "" 
+
+    if (delay || dmg || speed || crit) {
+        console.log("\n")
+    }
+
+    message+=  empower ? `Прирост силы  ${round(empower, 5)} % \n` : ""
+    message+=   speedBoost ? `Прирост скор  ${round(speedBoost, 5)} % \n` : ""
+    message+=  critEfective ?`Прирост от крита  ${round(critEfective, 5)} % \n` : ""
+    message+=  totalBoost ?`Общ  прирост  ${round(totalBoost, 5)} % \n` : ""
+    return message
+}
+
 function printSeperator() {
     console.log(" ")
     console.log(" ")
@@ -120,11 +158,16 @@ export function stats({ power, attack, delay, crit, critPower, powerAfter = powe
     empower = (afterBoostDmg / beforeBoostDmg - 1) * 100
     speedBoost = (beforeBoostSpeed / afterBoostSpeed - 1) * 100
     totalBoost = empower + speedBoost + critBoost
-    printStats({
+    // printStats({
+    //     empower: empower, speedBoost: speedBoost,
+    //     critEfective: critBoost, totalBoost: totalBoost
+    // })
+
+    return {message:getStatsMessage({
         empower: empower, speedBoost: speedBoost,
         critEfective: critBoost, totalBoost: totalBoost
-    })
-
+    }), totalBoost:round(totalBoost, 5) }
+    
 
 }
 

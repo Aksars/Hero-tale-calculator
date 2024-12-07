@@ -9,7 +9,7 @@ body {
     padding-top: 3em;
     min-height: 100vh;
     /*! background-image: url(./images/background.jpg); */
-    background: linear-gradient(90deg, #1a171e,#1a171e,#1a171e);
+    background: linear-gradient(90deg, #1a171e, #1a171e, #1a171e);
 }
 
 main {
@@ -42,6 +42,7 @@ main {
     border-radius: 7px;
     color: white;
     user-select: none;
+    position: relative;
 }
 
 h2 {
@@ -171,21 +172,159 @@ input:focus-visible {
 }
 
 .blur-panel {
-	width: 100%;
-	height: var(--loc-h);
-	background-color: #19171ccc;
-	right: 0;
-	position: absolute;
-	bottom: calc(569px - var(--loc-h));
-	--loc-h: 569px;
-	/* backdrop-filter: blur(24px); */
-   background: linear-gradient(180deg, #1a171e,#000000d6, #3f2861c4);
+    width: 100%;
+    height: var(--loc-h);
+    background-color: #19171ccc;
+    right: 0;
+    position: absolute;
+    bottom: calc(569px - var(--loc-h));
+    --loc-h: 569px;
+    /* backdrop-filter: blur(24px); */
+    background: linear-gradient(180deg, #1a171e, #000000d6, #3f2861c4);
 }
 
 .power .stat-label {
-	margin-top: 0.43em;
+    margin-top: 0.43em;
 }
 
 .stat-image {
     pointer-events: none;
-  }
+}
+
+
+.asLeft {
+    width: var(--size);
+    height: 45px;
+    border-radius: 100%;
+    /*! position: absolute; */
+    /*! top: 50%; */
+    /*! left: 0; */
+    /*! transform: translate(-50%, -50%); */
+    background-color: #fff;
+    border: none;
+    color: black;
+    box-shadow: 1px 1px 8px #00000047;
+    --size: 75px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: 0.4s;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.asLeft:hover {
+    transform: translate(10%);
+}
+
+.asLeft:active {
+    transform: translate(30%);
+    transition: 0.1s;
+}
+
+.asLeftContainer {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-40%, -50%);
+}
+
+
+.dash {
+    width: var(--dash-w);
+    opacity: 0;
+    height: var(--dash-h);
+    background-color: white;
+    position: absolute;
+    left: 0;
+   
+    transition-timing-function: linear;
+    transition: 0.2s;
+    animation-duration: 0.35s;
+    animation-timing-function: linear;
+    transform: translate(calc( var(--dash-w) * 2*4), 0);
+    will-change: transform;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+    top: calc(50% - var(--dash-h)/2);
+    --anim-del:0.3s;
+}
+
+@keyframes wave {
+    0%{
+        transform: translate(0%)  ; 
+    }
+    25%{
+        transform: translate(calc( var(--dash-w) * 2*1),10px) ; 
+    } 
+    50%{
+        transform: translate(calc( var(--dash-w) * 2*2), -10px) ; 
+    }   
+    75%{
+        transform: translate(calc( var(--dash-w) * 2*3), 10px); 
+    }
+    100%{
+        transform: translate(calc( var(--dash-w) * 2*4), 0px)  ; 
+    }
+}
+
+.asLeftAnimation {
+    position: absolute;
+    left: -100px;
+    top: 0;
+    --dash-h: 5px;
+    height: 100%;
+    --dash-w: 22px;
+    width: calc(var(--dash-w)*5);
+    overflow: hidden;
+}
+
+.dash:nth-child(1) {
+   
+    left: -60%;   
+    animation-delay: calc(var(--anim-del)*1);
+    transition-delay: calc(var(--anim-del)*1);
+}
+.dash:nth-child(2) {
+    left: -30%;
+    animation-delay: calc(var(--anim-del)*2);
+    transition-delay: calc(var(--anim-del)*2);
+}
+
+.dash:nth-child(3) {
+    left: 0%;
+    animation-delay: calc(var(--anim-del)*3);
+    transition-delay: calc(var(--anim-del)*3);
+}
+.dash:nth-child(4) {
+    left: 30%;
+    animation-delay: calc(var(--anim-del)*4);
+    transition-delay: calc(var(--anim-del)*4);
+}
+.dash:nth-child(5) {
+    left: 60%;
+    animation-delay:calc(var(--anim-del)*5);
+    transition-delay: calc(var(--anim-del)*5);
+}
+.dash:nth-child(6) {
+    left: 90%;
+    animation-delay: calc(var(--anim-del)*6);
+    transition-delay: calc(var(--anim-del)*6);
+}
+.dash:nth-child(7) {
+    left: 120%;
+    animation-delay: calc(var(--anim-del)*7);
+    transition-delay: calc(var(--anim-del)*7);
+}
+.dash:nth-child(8) { 
+    left: 150%;  
+    animation-delay: calc(var(--anim-del)*8);
+    transition-delay: calc(var(--anim-del)*8);
+}
+.asLeft:hover ~ .asLeftAnimation .dash {
+  /* transform: translateX(109%); */
+  width: var(--dash-w);
+  opacity: 1;
+  animation-play-state: running;
+  animation-name: wave;
+  
+}

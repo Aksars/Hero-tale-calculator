@@ -26,7 +26,7 @@
                         <div class="stat-label"> ranged/meele combat</div>   
                     </div>
                     <div class="stat-value">
-                        <input type="text" name="attack-before" placeholder="10" maxlength="3">
+                        <input type="text" name="attack-before" value="10" maxlength="3">
                     </div>
                 </div>
                 <div class="stat power">
@@ -35,7 +35,7 @@
                         <div class="stat-label">power</div> 
                     </div>
                     <div class="stat-value">
-                        <input type="text" name="power-before" placeholder="10" maxlength="3">
+                        <input type="text" name="power-before" value="10" maxlength="3">
                     </div>
                 </div>
                 <div class="stat crit">
@@ -44,7 +44,7 @@
                         <div class="stat-label">crit %</div>
                     </div>
                     <div class="stat-value">
-                        <input type="text" name="crit-before" placeholder="20" maxlength="3">
+                        <input type="text" name="crit-before" value="20" maxlength="5">
                     </div>
                 </div>
                 <div class="stat critPower">
@@ -53,7 +53,7 @@
                         <div class="stat-label">crit power</div>                       
                     </div>
                     <div class="stat-value">
-                        <input type="text" name="critPower-before" placeholder="1.60" maxlength="4">
+                        <input type="text" name="critPower-before" value="1.60" maxlength="4">
                     </div>
                 </div>
                 <div class="stat delay">
@@ -62,7 +62,7 @@
                         <div class="stat-label">attack delay</div>                         
                     </div>
                     <div class="stat-value">
-                        <input type="text" name="delay-before" placeholder="1.55">
+                        <input type="text" name="delay-before" value="1.55"  maxlength="5">
                     </div>
                 </div>
             </div>
@@ -70,14 +70,30 @@
         </div>
         <div class="after container">
             <h2>After</h2>
+           
+           
             <div class=" stats">
+                <div class="asLeftContainer"> 
+                    <button class="asLeft">
+                        as left
+                    </button>
+                    <div class="asLeftAnimation">
+                        <div class="dash"></div>
+                        <div class="dash"></div>
+                        <div class="dash"></div>
+                        <div class="dash"></div>
+                        <div class="dash"></div>
+                      
+                        
+                    </div>  
+                </div>
                 <div class="stat attack">
                     <div class="stat-description">
                         <img src="./images/attack.png" alt="" class="stat-image">
                         <div class="stat-label"> ranged/meele combat</div>   
                     </div>
                     <div class="stat-value">
-                        <input type="text" name="attack-after" placeholder="10" maxlength="3">
+                        <input type="text" name="attack-after" value="10" maxlength="3">
                     </div>
                 </div>
                 <div class="stat power">
@@ -86,7 +102,7 @@
                         <div class="stat-label">power</div> 
                     </div>
                     <div class="stat-value">
-                        <input type="text" name="power-after" placeholder="10" maxlength="3">
+                        <input type="text" name="power-after" value="10" maxlength="3">
                     </div>
                 </div>
                 <div class="stat crit">
@@ -95,7 +111,7 @@
                         <div class="stat-label">crit %</div>
                     </div>
                     <div class="stat-value">
-                        <input type="text" name="crit-after" placeholder="20" maxlength="3">
+                        <input type="text" name="crit-after" value="20" maxlength="5">
                     </div>
                 </div>
                 <div class="stat critPower">
@@ -104,7 +120,7 @@
                         <div class="stat-label">crit power</div>   
                     </div>
                     <div class="stat-value">
-                        <input type="text" name="critPower-after" placeholder="1.60" maxlength="4">
+                        <input type="text" name="critPower-after" value="1.60" maxlength="4">
                     </div>
                 </div>
                 <div class="stat delay">
@@ -113,7 +129,7 @@
                         <div class="stat-label">attack delay</div>    
                     </div>
                     <div class="stat-value">
-                        <input type="text" name="delay-after" placeholder="1.55">
+                        <input type="text" name="delay-after" value="1.55">
                     </div>
                 </div>
             </div>
@@ -125,7 +141,7 @@
             <h2 class="total-boost">0.000%</h2>
         </div>
     </main>
-    <script src="main.js" type="module"></script>
+    <script src="contoller.js" type="module"></script>
 </body>
 
 </html>
